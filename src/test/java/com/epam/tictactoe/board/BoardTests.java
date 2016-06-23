@@ -12,12 +12,12 @@ public class BoardTests {
 
     @Test()
     public void emptyBoardTest() {
-        IBoard board = new Board(3);
+        IBoard board = new Board(new Dimension(3));
         Assert.assertFalse(board.isFullyFilled());
     }
     @Test()
     public void markSignXAtPosition() {
-        IBoard board = new Board(3);
+        IBoard board = new Board(new Dimension(3));
         Sign sign=Sign.X;
         Assert.assertFalse(board.mark(0,sign));
         Assert.assertFalse(board.mark(10,sign));
@@ -27,7 +27,7 @@ public class BoardTests {
 
     @Test()
     public void checkElementAtPosition() {
-        IBoard board = new Board(3);
+        IBoard board = new Board(new Dimension(3));
         Sign sign=Sign.O;
         int position=5;
         board.mark(position,sign);

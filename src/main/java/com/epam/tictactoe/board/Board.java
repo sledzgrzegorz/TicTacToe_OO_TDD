@@ -13,8 +13,8 @@ public class Board implements IBoard {
     private final int dimension;
     private final Map<Integer, Sign> fields;
 
-    public Board(int dimension) {
-        this.dimension = dimension;
+    public Board(IDimension dimension) {
+        this.dimension = dimension.getValue();
         this.fields = new HashMap<Integer, Sign>();
         this.initialize();
     }
