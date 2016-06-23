@@ -39,4 +39,16 @@ public class Board implements IBoard {
     public Sign elementAt(int position) {
         return fields.get(position);
     }
+    public String toString(){
+        StringBuilder stringBuilder=new StringBuilder();
+        for (int i = 1; i <= dimension*dimension; i++) {
+            stringBuilder.append(fields.get(i));
+            if(i%dimension!=0){
+                stringBuilder.append("|");
+            }else{
+                stringBuilder.append('\n');
+            }
+        }
+        return stringBuilder.toString();
+    }
 }

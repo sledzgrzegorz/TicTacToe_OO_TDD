@@ -35,4 +35,19 @@ public class BoardTests {
         Assert.assertEquals(board.elementAt(position-1),Sign.EMPTY);
         Assert.assertNotEquals(board.elementAt(position+1),Sign.X);
     }
+    @Test()
+    public void toStringTestCorrect() {
+        IBoard board = new Board(new Dimension(3));
+        Sign sign=Sign.O;
+        int position=5;
+        board.mark(position,sign);
+        StringBuilder stringBuilder=new StringBuilder();
+        stringBuilder.append("-|-|-\n");
+        stringBuilder.append("-|O|-\n");
+        stringBuilder.append("-|-|-\n");
+        Assert.assertEquals(board.toString(),stringBuilder.toString());
+        Assert.assertNotEquals(board.toString(),stringBuilder.toString().replaceAll("O","-"));
+    }
 }
+
+
