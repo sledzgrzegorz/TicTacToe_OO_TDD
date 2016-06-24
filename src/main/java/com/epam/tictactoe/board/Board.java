@@ -29,7 +29,7 @@ public class Board implements IBoard {
         return !(fields.containsValue(Sign.EMPTY));
     }
 
-    public boolean mark(int position, Sign value) {
+    public boolean placeMark(int position, Sign value) {
         if (fields.containsKey(position)) {
             fields.put(position, value);
             return true;
@@ -39,6 +39,7 @@ public class Board implements IBoard {
     public Sign elementAt(int position) {
         return fields.get(position);
     }
+
     public String toString(){
         StringBuilder stringBuilder=new StringBuilder();
         for (int i = 1; i <= dimension*dimension; i++) {

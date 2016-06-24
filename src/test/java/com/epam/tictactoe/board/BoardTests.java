@@ -19,10 +19,10 @@ public class BoardTests {
     public void markSignXAtPosition() {
         IBoard board = new Board(new Dimension(3));
         Sign sign=Sign.X;
-        Assert.assertFalse(board.mark(0,sign));
-        Assert.assertFalse(board.mark(10,sign));
-        Assert.assertTrue(board.mark(1,sign));
-        Assert.assertTrue(board.mark(9,sign));
+        Assert.assertFalse(board.placeMark(0,sign));
+        Assert.assertFalse(board.placeMark(10,sign));
+        Assert.assertTrue(board.placeMark(1,sign));
+        Assert.assertTrue(board.placeMark(9,sign));
     }
 
     @Test()
@@ -30,7 +30,7 @@ public class BoardTests {
         IBoard board = new Board(new Dimension(3));
         Sign sign=Sign.O;
         int position=5;
-        board.mark(position,sign);
+        board.placeMark(position,sign);
         Assert.assertEquals(board.elementAt(position),sign);
         Assert.assertEquals(board.elementAt(position-1),Sign.EMPTY);
         Assert.assertNotEquals(board.elementAt(position+1),Sign.X);
@@ -40,7 +40,7 @@ public class BoardTests {
         IBoard board = new Board(new Dimension(3));
         Sign sign=Sign.O;
         int position=5;
-        board.mark(position,sign);
+        board.placeMark(position,sign);
         StringBuilder stringBuilder=new StringBuilder();
         stringBuilder.append("-|-|-\n");
         stringBuilder.append("-|O|-\n");

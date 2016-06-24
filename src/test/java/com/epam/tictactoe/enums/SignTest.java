@@ -3,7 +3,6 @@ package com.epam.tictactoe.enums;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
 
 /**
  * Created by Grzesiek on 2016-06-23.
