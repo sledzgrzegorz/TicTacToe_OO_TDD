@@ -19,27 +19,27 @@ public class BoardTests {
     public void markSignXAtPosition() {
         IBoard board = new Board(new Dimension(3));
         Sign sign=Sign.X;
-        Assert.assertFalse(board.placeMark(0,sign));
-        Assert.assertFalse(board.placeMark(10,sign));
-        Assert.assertTrue(board.placeMark(1,sign));
-        Assert.assertTrue(board.placeMark(9,sign));
+        Assert.assertFalse(board.placeMark(new Position(0),sign));
+        Assert.assertFalse(board.placeMark(new Position(10),sign));
+        Assert.assertTrue(board.placeMark(new Position(1),sign));
+        Assert.assertTrue(board.placeMark(new Position(9),sign));
     }
 
     @Test()
     public void checkElementAtPosition() {
         IBoard board = new Board(new Dimension(3));
         Sign sign=Sign.O;
-        int position=5;
+        IPosition position=new Position(5);
         board.placeMark(position,sign);
         Assert.assertEquals(board.elementAt(position),sign);
-        Assert.assertEquals(board.elementAt(position-1),Sign.EMPTY);
-        Assert.assertNotEquals(board.elementAt(position+1),Sign.X);
+        Assert.assertEquals(board.elementAt(new Position(4)),Sign.EMPTY);
+        Assert.assertNotEquals(board.elementAt(new Position(6)),Sign.X);
     }
     @Test()
     public void toStringTestCorrect() {
         IBoard board = new Board(new Dimension(3));
         Sign sign=Sign.O;
-        int position=5;
+        IPosition position=new Position(5);
         board.placeMark(position,sign);
         StringBuilder stringBuilder=new StringBuilder();
         stringBuilder.append("-|-|-\n");

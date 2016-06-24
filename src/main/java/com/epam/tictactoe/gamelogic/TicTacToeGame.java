@@ -3,6 +3,7 @@ package com.epam.tictactoe.gamelogic;
 import com.epam.tictactoe.board.Board;
 import com.epam.tictactoe.board.IBoard;
 import com.epam.tictactoe.board.IDimension;
+import com.epam.tictactoe.board.Position;
 import com.epam.tictactoe.enums.Sign;
 
 /**
@@ -17,7 +18,7 @@ public class TicTacToeGame {
         this.board=new Board(dimension);
     }
     void start(){
-        board.placeMark(5, Sign.O);
+        board.placeMark(new Position(5), Sign.O);
         System.out.println(board);
     }
 
