@@ -36,4 +36,9 @@ public class Position implements IPosition, Comparable {
         Position position = (Position) o;
         return new Integer(this.value).compareTo(position.value);
     }
+
+    @Override
+    public String toString() {
+        return "Position: "+value;
+    }
 }
