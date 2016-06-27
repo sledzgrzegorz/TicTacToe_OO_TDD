@@ -1,7 +1,5 @@
 package com.epam.tictactoe.player;
 
-import com.epam.tictactoe.arbiter.WinningSequence;
-import com.epam.tictactoe.arbiter.WinningSequence3x3;
 import com.epam.tictactoe.board.IPosition;
 import com.epam.tictactoe.enums.Sign;
 
@@ -25,5 +23,15 @@ public  class Player implements IPlayer {
 
     public Sign getSign() {
         return this.sign;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(obj==null){
+            return false;
+        }else{
+            Player player=(Player)obj;
+            return player.sign.equals(sign);
+        }
     }
 }
